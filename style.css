@@ -1,0 +1,43 @@
+#maze-container {
+  display: grid;
+  grid-template-columns: repeat(4, 50px); /* Adjust column count based on the maze size */
+  grid-template-rows: repeat(4, 50px); /* Adjust row count based on the maze size */
+  gap: 1px;
+  background-color: lightgray; /* Background color for the game board */
+  padding: 5px; /* Add some padding to the container */
+}
+
+.cell {
+  background-color: white; /* Default background color for cells */
+  border: 1px solid black; /* Border around cells */
+}
+
+/* Thick border on the north side for cells with north property true */
+.cell.north {
+  border-top-width: 5px; /* Thickness of the top border */
+}
+
+/* Thick border on the east side for cells with east property true */
+.cell.east {
+  border-right-width: 5px; /* Thickness of the right border */
+}
+
+/* Thick border on the west side for cells with west property true */
+.cell.west {
+  border-left-width: 5px; /* Thickness of the left border */
+}
+
+/* Thick border on the south side for cells with south property true */
+.cell.south {
+  border-bottom-width: 5px; /* Thickness of the bottom border */
+}
+
+/* Start cell style */
+.cell.start {
+  background-color: yellow; /* Yellow background color for the start cell */
+}
+
+/* Goal cell style */
+.cell.goal {
+  background-color: green; /* Green background color for the goal cell */
+}
