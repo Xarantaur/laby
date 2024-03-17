@@ -41,3 +41,10 @@
 .cell.goal {
   background-color: green; /* Green background color for the goal cell */
 }
+.cell.visited {
+  background-color: red;
+}
+
+.cell.current {
+  background-color: blue;
+}
