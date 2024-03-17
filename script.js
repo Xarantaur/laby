@@ -4,9 +4,14 @@ window.addEventListener("load", start);
 
 // ==================== MODEL ============================
 
-const route = []; // den rute soleren har besøgt.
+const route = [];
 
 let lab;
+let GRID_WIDTH;
+
+const board = document.querySelector("#maze-container");
+board.style.setProperty("--GRID_WIDTH", GRID_WIDTH);
+
 
 function loadLabFromJsonFile() {
   return fetch("maze.json")
@@ -18,17 +23,17 @@ function loadLabFromJsonFile() {
     })
     .then((data) => {
       lab = data;
+      GRID_WIDTH = lab.cols; // Set GRID_WIDTH dynamically
+      board.style.setProperty("--GRID_WIDTH", GRID_WIDTH); // Update CSS variable
     })
     .catch((error) => {
       console.error("There was a problem fetching the maze:", error);
     });
 }
 
-for (let i = 0; i < lab.maze.length; i++) {
-  for (let j = 0; j < lab.maze[i].length; j++) {
-    lab.maze[i][j].visited = false;
-  }
-}
+
+
+
 
 // define which directions is default by design and how to mark cells at visited:
 function visitCell(row, col) {
